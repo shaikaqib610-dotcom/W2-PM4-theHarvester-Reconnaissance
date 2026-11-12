@@ -82,19 +82,19 @@ The following screenshots document the practical work.
 
 ### Screenshot 1 – theHarvester Help and Version
 
-![Screenshot 1](Screenshots/1.png)
+![Screenshot 1](./1.png)
 
 ### Screenshot 2 – Reconnaissance Results
 
-![Screenshot 2](Screenshots/2.png)
+![Screenshot 2](./2.png)
 
 ### Screenshot 3 – theHarvester Execution
 
-![theHarvester Screenshot](Screenshots/theHarvester.png)
+![theHarvester Screenshot](./theHarvester.png)
 
 ### Screenshot 4 – Export Verification
 
-![Export Verification](Screenshots/verify%20file%20.png)
+![Export Verification](./verify%20file%20.png)
 
 ## 7. Project Documentation
 
