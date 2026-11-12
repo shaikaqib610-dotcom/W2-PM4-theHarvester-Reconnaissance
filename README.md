@@ -1,129 +1,130 @@
 # W2-PM4 – Footprinting & Reconnaissance Using theHarvester
 
+![Kali Linux](https://img.shields.io/badge/OS-Kali%20Linux-blue)
+![Tool](https://img.shields.io/badge/Tool-theHarvester-red)
+![Project](https://img.shields.io/badge/NetworkWalks-Week%202-green)
+
 ## Project Information
 
-- **Project:** Week 2 – Project Module 4 (W2-PM4)
-- **Training Organization:** NetworkWalks
-- **Batch:** B084
-- **Author:** Shaik Mahboob Mohiuddin
-- **Tool:** theHarvester 4.11.1
-- **Operating System:** Kali Linux
-- **Target Domain:** `microsoft.com`
+| Details | Information |
+|---|---|
+| Project | W2-PM4 |
+| Organization | NetworkWalks |
+| Batch | B084 |
+| Author | Shaik Mahboob Mohiuddin |
+| Operating System | Kali Linux |
+| Tool | theHarvester 4.11.1 |
+| Target Domain | microsoft.com |
 
 ## 1. Project Overview
 
-This project focuses on performing footprinting and reconnaissance using theHarvester in Kali Linux.
+This project demonstrates footprinting and reconnaissance using theHarvester in Kali Linux.
 
-TheHarvester is an OSINT tool used to collect publicly available information about a target domain, including hostnames, subdomains, email addresses, and other relevant information from supported sources.
-
-The practical exercise involved running searches using different data sources and exporting the collected results into JSON and XML formats.
+The practical work involved gathering publicly available information about a domain using different search sources, identifying hostnames and exporting the results in JSON and XML formats.
 
 ## 2. Objectives
 
 - Understand domain footprinting and reconnaissance.
-- Explore theHarvester tool in Kali Linux.
+- Perform OSINT using theHarvester.
 - Identify publicly available hostnames and subdomains.
-- Perform searches using different search engines.
-- Export reconnaissance results in JSON and XML formats.
-- Understand the importance of OSINT in cybersecurity.
+- Use different supported data sources.
+- Export scan results in JSON and XML formats.
 
-## 3. Tools and Technologies
+## 3. Tools Used
 
-| Tool | Purpose |
-|---|---|
-| Kali Linux | Operating system |
-| theHarvester 4.11.1 | OSINT and reconnaissance |
-| Baidu | Information gathering source |
-| DuckDuckGo | Information gathering source |
-| JSON | Exported result format |
-| XML | Exported result format |
+- Kali Linux
+- theHarvester 4.11.1
+- Baidu
+- DuckDuckGo
+- JSON and XML
 
-## 4. Practical Implementation
+## 4. Commands Executed
 
-### Task 1 – Reconnaissance Using Baidu
-
-Command:
+### Task 1 – Baidu
 
 ```bash
 theHarvester -d microsoft.com -l 1000 -b baidu
 ```
 
-**Results:**
-- IP addresses: 0
-- Email addresses: 0
-- People: 0
-- Hostnames: 9
+Initial result: 9 hostnames discovered.
 
-### Task 2 – Reconnaissance Using DuckDuckGo
-
-Command:
+### Task 2 – DuckDuckGo
 
 ```bash
 theHarvester -d microsoft.com -l 50 -b duckduckgo
 ```
 
-**Results:**
-- IP addresses: 0
-- Email addresses: 0
-- People: 0
-- Hostnames: 27
+Result: 27 hostnames discovered.
 
-Some discovered hostnames included:
-
-- account.microsoft.com
-- azure.microsoft.com
-- careers.microsoft.com
-- copilot.microsoft.com
-- developer.microsoft.com
-- docs.microsoft.com
-- learn.microsoft.com
-- support.microsoft.com
-- visualstudio.microsoft.com
-
-## 5. Exporting Results
-
-The scan results were exported using the following commands:
-
-**Baidu:**
+### Export Commands
 
 ```bash
 theHarvester -d microsoft.com -l 1000 -b baidu -f task1-baidu
-```
 
-**DuckDuckGo:**
-
-```bash
 theHarvester -d microsoft.com -l 50 -b duckduckgo -f task2-duckduckgo
 ```
 
-The tool generated the following files:
+## 5. Project Results
+
+| Scan | Hostnames |
+|---|---:|
+| Baidu initial scan | 9 |
+| DuckDuckGo scan | 27 |
+| Baidu export rerun | 0 |
+
+The Baidu export files reflect the later run, which returned no hostnames.
+
+**Technical note:** The project guide requested the `all` source. The installed version 4.11.1 did not support that source, so DuckDuckGo was used as an alternative.
+
+## 6. Screenshots – Practical Execution
+
+The following screenshots document the practical work.
+
+### Screenshot 1 – theHarvester Help and Version
+
+![Screenshot 1](Screenshots/1.png)
+
+### Screenshot 2 – Reconnaissance Results
+
+![Screenshot 2](Screenshots/2.png)
+
+### Screenshot 3 – theHarvester Execution
+
+![theHarvester Screenshot](Screenshots/theHarvester.png)
+
+### Screenshot 4 – Export Verification
+
+![Export Verification](Screenshots/verify%20file%20.png)
+
+## 7. Project Documentation
+
+| Document | Access |
+|---|---|
+| Kali Linux Commands and Outputs | [View PDF](Kali_Linux_Commands_Outputs.pdf) |
+| W2-PM4 Project Report | [View Project Report](W2-PM4_theHarvester_Report.pdf) |
+
+## 8. Scan Output Files
+
+The exported results are available in the `Output/` directory:
 
 - `task1-baidu.json`
 - `task1-baidu.xml`
 - `task2-duckduckgo.json`
 - `task2-duckduckgo.xml`
 
-## 6. Important Technical Note
+## 9. Learning Outcomes
 
-The project guide specified the use of the `all` data source. However, the installed theHarvester version 4.11.1 did not support the `all` source.
+- Practical experience with theHarvester.
+- Understanding OSINT reconnaissance.
+- Working with different search sources.
+- Identifying publicly available hostnames.
+- Exporting and reviewing JSON and XML files.
+- Understanding tool compatibility and limitations.
 
-An attempt to execute the command resulted in an invalid source error. DuckDuckGo was therefore used as an alternative source.
+## 10. Disclaimer
 
-The initial Baidu search returned 9 hostnames, while the subsequent Baidu export run returned 0 hostnames. The exported Baidu JSON and XML files reflect the later run.
+This project was performed for educational and cybersecurity training purposes. The exercise focused on publicly available information and domain reconnaissance.
 
-## 7. Repository Structure
+---
 
-```text
-W2-PM4-theHarvester-Reconnaissance/
-│
-├── README.md
-│
-├── Kali_Linux_Commands_Outputs.pdf
-│
-├── W2-PM4_theHarvester_Report.pdf
-│
-└── Output/
-    ├── task1-baidu.json
-    ├── task1-baidu.xml
-    ├── task2-duckduckgo.json
-    └── task2-duckduckgo.xml
+**Completed as part of NetworkWalks – Week 2 Project Module 4.**
